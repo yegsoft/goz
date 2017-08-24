@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ktu.uygulamalar">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-sdk android:minSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDNTqz7HTCCfeCujVIpmbiELQLiqcHsYVQ" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name="ktu.uygulamalar.GeoMainActivity">
+
+        </activity>
+        <activity
+            android:name="ktu.uygulamalar.DialogActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog">
+            <intent-filter>
+                <action android:name="popup"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/videolist_demo_name"
+            android:name="ktu.uygulamalar.VideoListDemoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="list"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ktu.uygulamalar.NavDrawer"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/fullscreen_demo_name"
+            android:name="ktu.uygulamalar.FullscreenActivity"
+            android:screenOrientation="sensor"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/BlackNoTitleBarTheme">
+            <intent-filter>
+                <action android:name="full"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="ktu.uygulamalar.MapActivity"
+            android:label="@string/marker_close_info_window_on_retap_demo_label"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <service
+            android:name="ktu.uygulamalar.SensorService"
+            android:enabled="true">
+        </service>
+
+        <receiver
+            android:name="ktu.uygulamalar.GeofenceReciever"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.aol.android.geofence.ACTION_RECEIVE_GEOFENCE" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="ktu.uygulamalar.SensorRestarterBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:label="RestartServiceWhenStopped">
+            <intent-filter>
+                <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
