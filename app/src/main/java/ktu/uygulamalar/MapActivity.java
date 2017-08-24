@@ -120,9 +120,6 @@ public class MapActivity extends AppCompatActivity implements
                 Log.d("holdlng"," "+holdLng);
 
 
-
-
-
                 KONUM=new LatLng(lat,lng);
                 Log.d("LAT"," "+lat);
                 Log.d("LNG"," "+lng);
@@ -131,8 +128,6 @@ public class MapActivity extends AppCompatActivity implements
                         .title(zone)
                         .snippet("bölgesinde yeni bir şarkı keşfettiniz")
                         .visible(true));
-
-
 
 
                 LatLngBounds bounds = new LatLngBounds.Builder()

@@ -108,22 +108,15 @@ public class GeofenceReciever extends BroadcastReceiver {
 
 
     private void sendNotification(String msg) {
-
-
         Log.i(TAG, "sendNotification: " + msg);
-
 
         Intent notificationIntent = new Intent(contextBootReceiver, MapActivity.class);
         notificationIntent.putExtra("location", msg);
-
-
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(contextBootReceiver);
         stackBuilder.addParentStack(GeoMainActivity.class);
         stackBuilder.addNextIntent(notificationIntent);
         PendingIntent notificationPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
 
 
         // Creating and sending Notification

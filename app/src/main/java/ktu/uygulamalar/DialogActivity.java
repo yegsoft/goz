@@ -40,7 +40,6 @@ public class DialogActivity extends Activity implements OnClickListener {
             message=location;
                 TextView textView = (TextView) findViewById(R.id.textView1);
                 textView.setText(message + " bölgesinde şarkı keşfedildi!");
-
         }
 
 
@@ -51,14 +50,11 @@ public class DialogActivity extends Activity implements OnClickListener {
 
         switch (v.getId()) {
             case R.id.ok_btn_id:
-
                 Intent in = new Intent(this, FullscreenActivity.class);
                 String intToSend = message;
                 in.putExtra("location", intToSend);
                 startActivity(in);
-
                 this.finish();
-
                 break;
 
             case R.id.cancel_btn_id:
