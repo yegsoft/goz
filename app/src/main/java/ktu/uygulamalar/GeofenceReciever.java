@@ -19,6 +19,7 @@ import com.google.android.gms.location.GeofenceStatusCodes;
 import com.google.android.gms.location.GeofencingEvent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -35,6 +36,8 @@ public class GeofenceReciever extends BroadcastReceiver {
     SharedPreferences.Editor editor;
     ArrayList<String> names;
     ArrayList<Integer> status;
+    Object old;
+    HashMap hm = new HashMap();
 
     ArrayList<String> geofenceswitches = new ArrayList<>();
 
@@ -105,8 +108,6 @@ public class GeofenceReciever extends BroadcastReceiver {
 
 
     private void sendNotification(String msg) {
-
-
 
 
         Log.i(TAG, "sendNotification: " + msg);

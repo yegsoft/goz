@@ -190,7 +190,6 @@ public class GeoMainActivity extends AppCompatActivity implements GoogleApiClien
                     Geofence geofence = createGeofence(holdName,holdLat,holdLng);
                     GeofencingRequest geofenceRequest = createGeofenceRequest(geofence);
                     addGeofence(geofenceRequest);
-
                 }
 
             }
@@ -205,7 +204,7 @@ public class GeoMainActivity extends AppCompatActivity implements GoogleApiClien
 
     private static final long GEO_DURATION = 60 * 60 * 1000;
     private static final String GEOFENCE_REQ_ID = "My Geofence";
-    private static final float GEOFENCE_RADIUS = 30.0f; // in meters
+    private static final float GEOFENCE_RADIUS = 100.0f; // in meters
 
     // Create a Geofence
 

@@ -24,13 +24,13 @@
     <include layout="@layout/content_nav_drawer"
         android:id="@+id/include" />
 
-    <android.support.design.widget.FloatingActionButton
+    <ImageButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+        android:src="@android:drawable/ic_menu_help"
+        android:background="@color/colorPrimary"/>
 
 </android.support.design.widget.CoordinatorLayout>

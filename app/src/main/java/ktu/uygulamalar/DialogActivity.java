@@ -14,10 +14,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class DialogActivity extends Activity implements OnClickListener {
 
     Button ok_btn, cancel_btn;
     String message;
+    String oldmessage;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -35,8 +38,9 @@ public class DialogActivity extends Activity implements OnClickListener {
             String location = getIntent().getExtras().getString("alert");
             Log.d("Yusuf", "AAAAAAAAAAAAAAAAAAAAAAA "+location);
             message=location;
-            TextView textView = (TextView) findViewById(R.id.textView1);
-            textView.setText(message+" bölgesinde şarkı keşfedildi!");
+                TextView textView = (TextView) findViewById(R.id.textView1);
+                textView.setText(message + " bölgesinde şarkı keşfedildi!");
+
         }
 
 
